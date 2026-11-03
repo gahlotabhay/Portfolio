@@ -12,7 +12,14 @@ export function createHeroComponent(data = {}) {
     photoUrl = '../frontend/assets/images/abhay.jpg',
     resumeUrl = '../frontend/assets/resume/ABHAY_RESUME.pdf',
     githubUrl = 'https://github.com/gahlotabhay',
-    linkedinUrl = 'https://in.linkedin.com/in/abhay-gahlot',
+    // linkedinUrl = 'https://in.linkedin.com/in/abhay-gahlot',
+    <a
+  href="https://www.linkedin.com/in/abhay-gahlot/"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="social-pill"
+  aria-label="LinkedIn Profile"
+>
     email = 'abhaygahlot100@gmail.com'
   } = data;
 
