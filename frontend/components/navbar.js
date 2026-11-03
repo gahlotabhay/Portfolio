@@ -23,9 +23,7 @@ export function createNavbarComponent() {
           <li><a href="#certifications" class="nav-link">Certifications</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
           <li class="mobile-only">
-            <a href="../frontend/assets/resume/ABHAY_RESUME.pdf" download="Abhay_Gahlot_Resume.pdf" class="btn btn-primary btn-sm mobile-resume-btn">
-              Download Resume
-            </a>
+            
           </li>
         </ul>
 
