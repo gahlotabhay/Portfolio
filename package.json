@@ -1,0 +1,31 @@
+{
+  "name": "abhay-portfolio",
+  "version": "1.0.0",
+  "description": "Professional Personal Portfolio for Abhay Gahlot - Electrical and Computer Engineering Student | AI & Data Science",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "seed": "node backend/config/database-config.js --seed"
+  },
+  "keywords": [
+    "portfolio",
+    "abhay-gahlot",
+    "electrical-engineering",
+    "computer-engineering",
+    "artificial-intelligence",
+    "machine-learning",
+    "data-science"
+  ],
+  "author": "Abhay Gahlot <abhaygahlot100@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "pg": "^8.13.1",
+    "sqlite3": "^5.1.7"
+  }
+}
