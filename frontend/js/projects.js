@@ -6,6 +6,18 @@
 (function () {
   'use strict';
 
+  // Helper to ensure asset paths resolve properly from both root and subfolders
+  function resolveAssetPath(path) {
+    if (!path) return '';
+    if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+      return path;
+    }
+    // Check if current document is located in /html/ subfolder
+    const inHtmlFolder = window.location.pathname.includes('/html/');
+    const clean = path.replace(/^(\.\.\/|\.\/)+frontend\//, 'frontend/');
+    return (inHtmlFolder ? '../' : './') + clean;
+  }
+
   // 1. Structured Projects Data (Single Source of Truth)
   const projectsData = [
     {
@@ -14,9 +26,9 @@
       tagline: 'Machine learning time-series regression for national electricity demand forecasting',
       short_description: 'A machine learning project focused on predicting electricity demand using historical Indian electricity consumption data. The project explores temporal features such as year, month, day, and hour to estimate national hourly electricity demand.',
       categories: ['AI/ML', 'Data Science'],
-      thumbnail: '../frontend/assets/projects/load-forecasting.svg',
+      thumbnail: './frontend/assets/projects/load-forecasting.svg',
       tech_stack: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Random Forest', 'Matplotlib'],
-      github_url: null, // Set to repo URL or null to gracefully hide
+      github_url: 'https://github.com/gahlotabhay',
       demo_url: null,
       problem_statement: 'Accurate electricity load forecasting is vital for power grid reliability, preventing blackout risks, optimizing fuel utilization, and scheduling power generator dispatch. The temporal nature of consumption varies non-linearly across diurnal and seasonal cycles.',
       objective: 'Design and implement a robust predictive machine learning pipeline using Random Forest Regressor to forecast hourly national power consumption patterns based on historical temporal dynamics.',
@@ -35,9 +47,9 @@
       tagline: 'Simulated microgrid incorporating solar PV, battery energy storage, and IEEE 1547 islanding protection',
       short_description: 'A simulated microgrid system involving solar PV, battery energy storage, a utility grid, and local loads. The project investigates islanding conditions and the monitoring of electrical parameters to improve system reliability.',
       categories: ['Electrical Engineering', 'Research'],
-      thumbnail: '../frontend/assets/projects/microgrid-ems.svg',
+      thumbnail: './frontend/assets/projects/microgrid-ems.svg',
       tech_stack: ['MATLAB Simulink', 'Simscape Electrical', 'MATLAB', 'Power Systems', 'Control Systems'],
-      github_url: null,
+      github_url: 'https://github.com/gahlotabhay',
       demo_url: null,
       problem_statement: 'Distributed generation units must rapidly detect disconnection from the main utility grid (islanding) to protect line maintenance personnel, avoid out-of-phase reclosing, and preserve equipment safety per IEEE 1547 standards.',
       objective: 'Model a comprehensive campus microgrid incorporating solar PV arrays, battery storage, and dynamic loads in MATLAB Simulink, formulating passive islanding detection criteria based on voltage and frequency deviations.',
@@ -56,9 +68,9 @@
       tagline: 'Data-driven machine learning models for forecasting electric vehicle charging load',
       short_description: 'A data-driven project exploring electric vehicle charging demand and the prediction of charging requirements using historical or modeled data.',
       categories: ['Data Science', 'AI/ML'],
-      thumbnail: '../frontend/assets/projects/ev-charging.svg',
+      thumbnail: './frontend/assets/projects/ev-charging.svg',
       tech_stack: ['Python', 'Data Analytics', 'Machine Learning', 'Data Visualization', 'Pandas', 'NumPy', 'XGBoost', 'Matplotlib'],
-      github_url: null,
+      github_url: 'https://github.com/gahlotabhay',
       demo_url: null,
       problem_statement: 'Rapid proliferation of electric vehicles creates localized transformer stress and uncoordinated peak charging surges on the electrical distribution network, threatening grid stability.',
       objective: 'Forecast charging station power demand and session durations using machine learning to support smart charging scheduling, grid capacity planning, and dynamic energy pricing.',
@@ -77,9 +89,9 @@
       tagline: 'Intelligent lecture transcription, RAG knowledge retrieval, and study summarization',
       short_description: 'An intelligent learning application exploring transcription, retrieval-augmented generation, and AI-based data processing to support knowledge retrieval and learning workflows.',
       categories: ['AI/ML', 'Web Development'],
-      thumbnail: '../frontend/assets/projects/swift-notes.svg',
+      thumbnail: './frontend/assets/projects/swift-notes.svg',
       tech_stack: ['Python', 'AI', 'NLP', 'RAG', 'OpenAI API', 'FastAPI', 'JavaScript', 'HTML/CSS'],
-      github_url: null,
+      github_url: 'https://github.com/gahlotabhay',
       demo_url: null,
       problem_statement: 'Students and researchers waste substantial hours manually reviewing lengthy technical lectures and videos to locate specific formulas, derivations, and conceptual explanations.',
       objective: 'Build an automated, interactive learning assistant capable of transcribing multimedia lectures, chunking knowledge segments, and executing semantic retrieval-augmented generation (RAG) queries with contextual citations.',
@@ -98,9 +110,9 @@
       tagline: 'Industrial automation control system featuring Delta PLC, HMI sequencing, and SCADA supervision',
       short_description: 'An industrial automation project designed to automate a mixing process using PLC-based control logic, an HMI interface, timers, motors, and process sequencing.',
       categories: ['Automation', 'Electrical Engineering', 'Research'],
-      thumbnail: '../frontend/assets/projects/plc-mixing.svg',
+      thumbnail: './frontend/assets/projects/plc-mixing.svg',
       tech_stack: ['Delta PLC', 'PLC Programming', 'HMI', 'SCADA', 'Ignition', 'Industrial Automation'],
-      github_url: null,
+      github_url: 'https://github.com/gahlotabhay',
       demo_url: null,
       problem_statement: 'Traditional manual industrial fluid mixing processes suffer from human operator errors, batch inconsistency, chemical hazards, and lack of real-time telemetry, hindering Industry 4.0 modernization.',
       objective: 'Engineer a dependable automated liquid batch mixing control system utilizing programmable logic controllers (PLC), human-machine interfaces (HMI), and SCADA telemetry for recipe execution, safety interlocks, and sensor monitoring.',
@@ -119,9 +131,9 @@
       tagline: 'Centralized platform concept for automated institutional compliance and AICTE approval workflows',
       short_description: 'An AI-enabled platform concept designed to automate AICTE approval workflows, monitor institutional compliance, validate documents, and manage deadline-based alerts through a centralized digital system.',
       categories: ['Web Development', 'AI/ML'],
-      thumbnail: '../frontend/assets/projects/reguflow.svg',
+      thumbnail: './frontend/assets/projects/reguflow.svg',
       tech_stack: ['Next.js', 'React', 'FastAPI', 'OCR', 'Rule Engine', 'PostgreSQL', 'AI'],
-      github_url: null,
+      github_url: 'https://github.com/gahlotabhay',
       demo_url: null,
       problem_statement: 'Higher education institutions face grueling, error-prone manual compliance procedures to secure annual AICTE regulatory approvals, struggling with fragmented documentation, complex deficiency norms, and missed deadlines.',
       objective: 'Conceive and build an intelligent, centralized web platform to streamline institutional compliance auditing, automate document verification via OCR, and track statutory deadlines with role-based governance.',
@@ -170,6 +182,7 @@
 
     const primaryCategory = project.categories[0];
     const techTagsHtml = project.tech_stack.map(tech => `<span class="tech-tag">${escapeHtml(tech)}</span>`).join('');
+    const resolvedThumb = resolveAssetPath(project.thumbnail);
 
     // Conditionally show GitHub and Live Demo buttons
     let githubBtnHtml = '';
@@ -192,7 +205,7 @@
 
     card.innerHTML = `
       <div class="project-thumb-wrapper">
-        <img src="${escapeHtml(project.thumbnail)}" alt="${escapeHtml(project.title)}" class="project-thumb" loading="lazy">
+        <img src="${escapeHtml(resolvedThumb)}" alt="${escapeHtml(project.title)}" class="project-thumb" loading="lazy">
         <span class="project-category-badge">${escapeHtml(primaryCategory)}</span>
       </div>
       <div class="project-body">
@@ -336,6 +349,7 @@
     getAll: () => projectsData,
     openModal: openProjectModal,
     closeModal: closeProjectModal,
-    render: renderProjects
+    render: renderProjects,
+    resolveAssetPath: resolveAssetPath
   };
 })();
