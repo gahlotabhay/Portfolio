@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ai-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#110E24"/>
+      <stop offset="50%" stop-color="#1B163B"/>
+      <stop offset="100%" stop-color="#140F2D"/>
+    </linearGradient>
+    <linearGradient id="purple-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#ai-bg)" rx="16"/>
+
+  <!-- Top Title -->
+  <rect x="40" y="24" width="350" height="34" rx="17" fill="#241E47" stroke="#3D3270" stroke-width="1"/>
+  <circle cx="58" cy="41" r="5" fill="#A78BFA"/>
+  <text x="72" y="46" fill="#F8FAFC" font-family="'Space Grotesk', system-ui, sans-serif" font-size="13" font-weight="600">AI LEARNING ASSISTANT &amp; RAG ENGINE</text>
+
+  <rect x="580" y="24" width="180" height="34" rx="17" fill="#241E47" stroke="#A78BFA" stroke-width="1"/>
+  <text x="670" y="46" text-anchor="middle" fill="#C4B5FD" font-family="'JetBrains Mono', monospace" font-size="12">Whisper &bull; RAG &bull; LLM</text>
+
+  <!-- 4 Step Pipeline Flow -->
+  <!-- Step 1: Lecture Media Input -->
+  <g transform="translate(45, 100)">
+    <rect width="150" height="230" rx="12" fill="#201A42" stroke="#4C3A82" stroke-width="1.5"/>
+    <rect x="15" y="15" width="40" height="40" rx="8" fill="#3B2D6B"/>
+    <text x="35" y="40" text-anchor="middle" fill="#C4B5FD" font-size="18">🎙️</text>
+    <text x="15" y="80" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700">1. Media Intake</text>
+    <text x="15" y="105" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">Audio / Video input streams from lectures.</text>
+    <line x1="15" y1="130" x2="135" y2="130" stroke="#3D3270"/>
+    <text x="15" y="155" fill="#C4B5FD" font-family="'JetBrains Mono', monospace" font-size="10">FFmpeg Extraction</text>
+    <text x="15" y="175" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="10">Audio normalizer</text>
+    <rect x="15" y="195" width="105" height="18" rx="4" fill="#372C63"/>
+    <text x="67" y="208" text-anchor="middle" fill="#A78BFA" font-family="'Inter', sans-serif" font-size="9">16kHz Waveform</text>
+  </g>
+
+  <!-- Arrow 1 to 2 -->
+  <path d="M 195 215 L 225 215" fill="none" stroke="#8B5CF6" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: Transcription Engine -->
+  <g transform="translate(230, 100)">
+    <rect width="150" height="230" rx="12" fill="#201A42" stroke="#4C3A82" stroke-width="1.5"/>
+    <rect x="15" y="15" width="40" height="40" rx="8" fill="#3B2D6B"/>
+    <text x="35" y="40" text-anchor="middle" fill="#38BDF8" font-size="18">⚡</text>
+    <text x="15" y="80" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700">2. Transcription</text>
+    <text x="15" y="105" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">Automated speech recognition (ASR).</text>
+    <line x1="15" y1="130" x2="135" y2="130" stroke="#3D3270"/>
+    <text x="15" y="155" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="10">OpenAI Whisper</text>
+    <text x="15" y="175" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="10">Timestamps sync</text>
+    <rect x="15" y="195" width="115" height="18" rx="4" fill="#372C63"/>
+    <text x="72" y="208" text-anchor="middle" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="9">Word-level Bounds</text>
+  </g>
+
+  <!-- Arrow 2 to 3 -->
+  <path d="M 380 215 L 410 215" fill="none" stroke="#8B5CF6" stroke-width="2.5"/>
+
+  <!-- Step 3: Embeddings & Vector Search -->
+  <g transform="translate(415, 100)">
+    <rect width="160" height="230" rx="12" fill="#201A42" stroke="#4C3A82" stroke-width="1.5"/>
+    <rect x="15" y="15" width="40" height="40" rx="8" fill="#3B2D6B"/>
+    <text x="35" y="40" text-anchor="middle" fill="#34D399" font-size="18">🧠</text>
+    <text x="15" y="80" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700">3. RAG Indexing</text>
+    <text x="15" y="105" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">Chunking &amp; semantic similarity lookup.</text>
+    <line x1="15" y1="130" x2="145" y2="130" stroke="#3D3270"/>
+    <text x="15" y="155" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="10">Cosine Similarity</text>
+    <text x="15" y="175" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="10">Vector Index Store</text>
+    <rect x="15" y="195" width="120" height="18" rx="4" fill="#372C63"/>
+    <text x="75" y="208" text-anchor="middle" fill="#34D399" font-family="'Inter', sans-serif" font-size="9">Contextual Chunks</text>
+  </g>
+
+  <!-- Arrow 3 to 4 -->
+  <path d="M 575 215 L 600 215" fill="none" stroke="#8B5CF6" stroke-width="2.5"/>
+
+  <!-- Step 4: LLM Generation & Study Sheet -->
+  <g transform="translate(605, 100)">
+    <rect width="150" height="230" rx="12" fill="#271E4F" stroke="#8B5CF6" stroke-width="2"/>
+    <rect x="15" y="15" width="40" height="40" rx="8" fill="#4C3A82"/>
+    <text x="35" y="40" text-anchor="middle" fill="#F472B6" font-size="18">📝</text>
+    <text x="15" y="80" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700">4. Synthesis</text>
+    <text x="15" y="105" fill="#C4B5FD" font-family="'Inter', sans-serif" font-size="11">Notes, formulas, &amp; flashcards.</text>
+    <line x1="15" y1="130" x2="135" y2="130" stroke="#4C3A82"/>
+    <text x="15" y="155" fill="#F472B6" font-family="'JetBrains Mono', monospace" font-size="10">Formula Sheets</text>
+    <text x="15" y="175" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="10">QA with Citations</text>
+    <rect x="15" y="195" width="115" height="18" rx="4" fill="#432874"/>
+    <text x="72" y="208" text-anchor="middle" fill="#F472B6" font-family="'Inter', sans-serif" font-size="9">60% Study Time Saved</text>
+  </g>
+
+  <!-- Bottom Details Bar -->
+  <g transform="translate(45, 360)">
+    <rect width="710" height="60" rx="10" fill="#171233" stroke="#2D2355" stroke-width="1"/>
+    <text x="355" y="26" text-anchor="middle" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600">
+      FastAPI Microservices &bull; Zero Hallucination Retrieval &bull; Interactive Video Timestamps &bull; Formula LaTeX Rendering
+    </text>
+    <text x="355" y="46" text-anchor="middle" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">
+      Built for academic efficiency, engineering concept synthesis, and instant derivation lookups.
+    </text>
+  </g>
+</svg>

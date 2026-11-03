@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mw-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#312E81"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" rx="12" fill="url(#mw-bg)"/>
+  <rect x="15" y="15" width="370" height="210" rx="8" fill="none" stroke="#818CF8" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+  <circle cx="200" cy="70" r="32" fill="#3730A3" stroke="#A5B4FC" stroke-width="2"/>
+  <text x="200" y="77" text-anchor="middle" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700">MathWorks</text>
+  <text x="200" y="130" text-anchor="middle" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">Simulink Onramp</text>
+  <text x="200" y="155" text-anchor="middle" fill="#C7D2FE" font-family="'Inter', sans-serif" font-size="12">System Modeling &amp; Dynamic Simulation</text>
+  <rect x="95" y="175" width="210" height="26" rx="13" fill="#312E81" stroke="#818CF8"/>
+  <text x="200" y="192" text-anchor="middle" fill="#EEF2FF" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">Dynamic Control &amp; Simscape</text>
+</svg>

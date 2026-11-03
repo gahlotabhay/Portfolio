@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="tata-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F223D"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" rx="12" fill="url(#tata-bg)"/>
+  <rect x="15" y="15" width="370" height="210" rx="8" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+  <circle cx="200" cy="70" r="32" fill="#1E40AF" stroke="#60A5FA" stroke-width="2"/>
+  <text x="200" y="78" text-anchor="middle" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700">TATA</text>
+  <text x="200" y="130" text-anchor="middle" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">Data Analytics Job Simulation</text>
+  <text x="200" y="155" text-anchor="middle" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12">Issued by Forage &bull; Verified Experience</text>
+  <rect x="110" y="175" width="180" height="26" rx="13" fill="#1D4ED8"/>
+  <text x="200" y="192" text-anchor="middle" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">Executive Data Insights</text>
+</svg>

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="plc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="tank-liquid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#plc-bg)" rx="16"/>
+
+  <!-- Top Title -->
+  <rect x="40" y="24" width="370" height="34" rx="17" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <circle cx="58" cy="41" r="5" fill="#38BDF8"/>
+  <text x="72" y="46" fill="#F8FAFC" font-family="'Space Grotesk', system-ui, sans-serif" font-size="13" font-weight="600">AUTOMATIC MIXING PROCESS PLANT (PLC/SCADA)</text>
+
+  <rect x="580" y="24" width="180" height="34" rx="17" fill="#1E293B" stroke="#F59E0B" stroke-width="1"/>
+  <text x="670" y="46" text-anchor="middle" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="12">AKGEC 2026 Paper</text>
+
+  <!-- Left: Delta PLC Hardware Rack -->
+  <g transform="translate(50, 95)">
+    <rect width="180" height="250" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+    <rect x="15" y="15" width="150" height="40" rx="6" fill="#1E293B"/>
+    <text x="90" y="38" text-anchor="middle" fill="#38BDF8" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700">DELTA DVP PLC</text>
+
+    <!-- Status LEDs -->
+    <g transform="translate(25, 75)">
+      <circle cx="10" cy="5" r="4" fill="#22C55E"/>
+      <text x="24" y="9" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="9">RUN</text>
+      
+      <circle cx="65" cy="5" r="4" fill="#EAB308"/>
+      <text x="79" y="9" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="9">MODBUS</text>
+
+      <circle cx="120" cy="5" r="4" fill="#64748B"/>
+      <text x="134" y="9" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="9">ERROR</text>
+    </g>
+
+    <!-- Ladder Logic Diagram Representation -->
+    <g transform="translate(20, 110)">
+      <rect width="140" height="85" rx="6" fill="#1E293B" stroke="#334155"/>
+      <text x="70" y="20" text-anchor="middle" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="9">LADDER SEQUENCING</text>
+      <!-- Rung 1 -->
+      <line x1="15" y1="36" x2="125" y2="36" stroke="#60A5FA" stroke-width="1.5"/>
+      <line x1="35" y1="30" x2="35" y2="42" stroke="#60A5FA" stroke-width="1.5"/>
+      <line x1="45" y1="30" x2="45" y2="42" stroke="#60A5FA" stroke-width="1.5"/>
+      <circle cx="110" cy="36" r="6" fill="none" stroke="#60A5FA" stroke-width="1.5"/>
+      <!-- Rung 2 -->
+      <line x1="15" y1="62" x2="125" y2="62" stroke="#60A5FA" stroke-width="1.5"/>
+      <line x1="55" y1="56" x2="55" y2="68" stroke="#60A5FA" stroke-width="1.5"/>
+      <line x1="65" y1="56" x2="65" y2="68" stroke="#60A5FA" stroke-width="1.5"/>
+      <circle cx="110" cy="62" r="6" fill="none" stroke="#60A5FA" stroke-width="1.5"/>
+    </g>
+
+    <rect x="20" y="210" width="140" height="24" rx="4" fill="#164E63"/>
+    <text x="90" y="226" text-anchor="middle" fill="#22D3EE" font-family="'JetBrains Mono', monospace" font-size="10">RS-485 Telemetry</text>
+  </g>
+
+  <!-- Middle: P&ID Mixing Vessel System -->
+  <g transform="translate(260, 95)">
+    <!-- Vessel Tank -->
+    <rect x="70" y="80" width="160" height="150" rx="12" fill="#1E293B" stroke="#94A3B8" stroke-width="2"/>
+    <!-- Liquid inside -->
+    <rect x="72" y="130" width="156" height="98" rx="8" fill="url(#tank-liquid)"/>
+    
+    <!-- Agitator Motor on Top -->
+    <rect x="125" y="40" width="50" height="40" rx="6" fill="#334155" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="150" y="65" text-anchor="middle" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700">M1</text>
+    <!-- Shaft & Blades -->
+    <line x1="150" y1="80" x2="150" y2="185" stroke="#E2E8F0" stroke-width="3"/>
+    <line x1="110" y1="185" x2="190" y2="185" stroke="#E2E8F0" stroke-width="4"/>
+    <line x1="120" y1="165" x2="180" y2="165" stroke="#E2E8F0" stroke-width="3"/>
+
+    <!-- Inlets -->
+    <path d="M 30 50 L 95 50 L 95 80" fill="none" stroke="#38BDF8" stroke-width="3"/>
+    <circle cx="65" cy="50" r="8" fill="#0284C7"/>
+    <text x="65" y="53" text-anchor="middle" fill="#FFF" font-family="'JetBrains Mono', monospace" font-size="7">V1</text>
+    <text x="30" y="40" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">Inlet Fluid A</text>
+
+    <path d="M 270 50 L 205 50 L 205 80" fill="none" stroke="#A78BFA" stroke-width="3"/>
+    <circle cx="235" cy="50" r="8" fill="#7C3AED"/>
+    <text x="235" y="53" text-anchor="middle" fill="#FFF" font-family="'JetBrains Mono', monospace" font-size="7">V2</text>
+    <text x="270" y="40" text-anchor="end" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">Inlet Fluid B</text>
+
+    <!-- Sensors -->
+    <rect x="235" y="110" width="50" height="20" rx="4" fill="#0F172A" stroke="#EF4444"/>
+    <text x="260" y="123" text-anchor="middle" fill="#EF4444" font-family="'JetBrains Mono', monospace" font-size="8">HIGH LVL</text>
+
+    <rect x="235" y="200" width="50" height="20" rx="4" fill="#0F172A" stroke="#10B981"/>
+    <text x="260" y="213" text-anchor="middle" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="8">LOW LVL</text>
+
+    <!-- Drain Pump Valve -->
+    <path d="M 150 230 L 150 260 L 240 260" fill="none" stroke="#38BDF8" stroke-width="3"/>
+    <circle cx="185" cy="260" r="10" fill="#047857"/>
+    <text x="185" y="264" text-anchor="middle" fill="#FFF" font-family="'JetBrains Mono', monospace" font-size="8">PUMP</text>
+    <text x="245" y="264" fill="#34D399" font-family="'Inter', sans-serif" font-size="9">Discharge</text>
+  </g>
+
+  <!-- Right: HMI & SCADA Interface Screen -->
+  <g transform="translate(560, 95)">
+    <rect width="190" height="250" rx="10" fill="#0F172A" stroke="#A78BFA" stroke-width="1.5"/>
+    <rect x="15" y="15" width="160" height="34" rx="4" fill="#1E293B"/>
+    <text x="95" y="37" text-anchor="middle" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600">HMI / SCADA VIEW</text>
+
+    <rect x="15" y="60" width="160" height="48" rx="6" fill="#1E1B4B" stroke="#4338CA"/>
+    <text x="25" y="78" fill="#A5B4FC" font-family="'Inter', sans-serif" font-size="10">Batch Recipe Status</text>
+    <text x="25" y="98" fill="#F8FAFC" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700">STAGE 3: MIXING</text>
+
+    <rect x="15" y="120" width="160" height="50" rx="6" fill="#1E293B"/>
+    <text x="25" y="138" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">Agitator Speed</text>
+    <text x="25" y="158" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700">1200 RPM</text>
+
+    <!-- Emergency Stop Badge -->
+    <rect x="15" y="185" width="160" height="42" rx="6" fill="#450A0A" stroke="#DC2626"/>
+    <circle cx="35" cy="206" r="10" fill="#DC2626"/>
+    <text x="35" y="210" text-anchor="middle" fill="#FFF" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="700">!</text>
+    <text x="55" y="202" fill="#FCA5A5" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700">Safety Interlock</text>
+    <text x="55" y="216" fill="#EF4444" font-family="'JetBrains Mono', monospace" font-size="9">E-Stop OK &bull; Auto Mode</text>
+  </g>
+
+  <!-- Bottom Details Bar -->
+  <g transform="translate(40, 375)">
+    <rect width="720" height="50" rx="8" fill="#111827" stroke="#1F2937" stroke-width="1"/>
+    <text x="360" y="24" text-anchor="middle" fill="#F8FAFC" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600">
+      Zero Overflow Faults &bull; Deterministic State Transitions &bull; Precision Dwell Timers &bull; Telemetry Logging
+    </text>
+    <text x="360" y="42" text-anchor="middle" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">
+      Presented at 3rd International Conference AKGEC 2026 (26–28 February 2026)
+    </text>
+  </g>
+</svg>

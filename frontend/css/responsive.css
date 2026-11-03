@@ -1,0 +1,266 @@
+/* ==============================================================================
+   RESPONSIVE STYLESHEET
+   Breakpoints: Desktop (>1024px), Tablet (768px - 1024px), Mobile (<768px)
+   ============================================================================== */
+
+/* --- Tablet Breakpoint (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+  .hero-content-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .avatar-frame {
+    width: 280px;
+    height: 340px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .experience-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* --- Mobile Breakpoint (max-width: 768px) --- */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  /* Mobile Navigation Menu Drawer */
+  .mobile-toggle-btn {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background: var(--bg-primary);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: 1.15rem;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .nav-actions .btn-sm {
+    display: none;
+  }
+
+  .nav-menu .mobile-resume-btn {
+    display: inline-flex;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  /* Hero Mobile Layout */
+  .hero-section {
+    min-height: auto;
+    padding-top: calc(var(--header-height) + 1.5rem);
+    padding-bottom: 4rem;
+  }
+
+  .hero-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-text {
+    align-items: center;
+  }
+
+  .hero-badge {
+    margin: 0 auto;
+  }
+
+  .hero-tagline {
+    border-left: none;
+    border-top: 2px solid var(--accent-cyan);
+    padding-left: 0;
+    padding-top: 0.5rem;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .hero-social-links {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .avatar-frame {
+    width: 240px;
+    height: 290px;
+  }
+
+  .floating-badge {
+    display: none; /* Hide floating badges on mobile to keep clean focus */
+  }
+
+  /* Projects Mobile Grid */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-filter-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+  }
+
+  /* Modal Mobile Adaptations */
+  .modal-container {
+    max-height: 95vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .modal-header {
+    padding: 1.25rem 1.25rem 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .modal-body {
+    padding: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .modal-footer {
+    padding: 1rem 1.25rem;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+  }
+
+  /* Contact Form Container */
+  .contact-form-container {
+    padding: 1.5rem;
+  }
+
+  /* Timeline */
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline-item {
+    padding-left: 35px;
+  }
+
+  .timeline-node {
+    left: 2px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .timeline-card {
+    padding: 1.25rem;
+  }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}
+
+/* --- Small Mobile Breakpoint (max-width: 480px) --- */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .skills-categories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-card {
+    padding: 1.5rem;
+  }
+
+  .publication-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .back-to-top-btn {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+}
