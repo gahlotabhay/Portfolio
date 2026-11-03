@@ -11,8 +11,8 @@ export function createHeroComponent(data = {}) {
     bio = 'I am an Electrical and Computer Engineering student at KIET Group of Institutions, passionate about building intelligent systems using AI, data, software, and engineering principles. I enjoy exploring innovative ideas, developing practical solutions, and transforming complex problems into meaningful technical projects.',
     photoUrl = '../frontend/assets/images/abhay.jpg',
     resumeUrl = '../frontend/assets/resume/ABHAY_RESUME.pdf',
-    githubUrl = 'https://github.com/YOUR_GITHUB_URL',
-    linkedinUrl = 'https://linkedin.com/in/YOUR_LINKEDIN_URL',
+    githubUrl = 'https://github.com/gahlotabhay',
+    linkedinUrl = 'https://linkedin.com/in/abhay-gahlot',
     email = 'abhaygahlot100@gmail.com'
   } = data;
 
