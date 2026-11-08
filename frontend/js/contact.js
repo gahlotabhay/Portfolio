@@ -75,35 +75,52 @@
         website_hp: hpInput ? hpInput.value : ''
       };
 
+      
       try {
-        // Submit to Backend API (supports both same-host and local Express server on port 5000)
-        let apiUrl = '/api/contact';
-        if (window.location.protocol === 'file:') {
-          apiUrl = 'http://localhost:5000/api/contact';
-        }
-
-        const response = await fetch(apiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
-
-        const result = await response.json();
-
-        if (response.ok && result.success) {
-          showAlert('success', result.message || 'Thank you! Your message has been sent to Abhay.');
-          contactForm.reset();
-        } else {
-          showAlert('error', result.message || 'Unable to deliver message. Please contact abhaygahlot100@gmail.com.');
-        }
+          // Submit directly to FormSubmit instead of the old backend
+          const response = await fetch(
+              'https://formsubmit.co/ajax/abhaygahlot100@gmail.com',
+              {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                      'Accept': 'application/json'
+                  },
+                  body: JSON.stringify({
+                      ...payload,
+                      _subject: 'New Portfolio Contact Message',
+                      _template: 'table',
+                      _captcha: 'true'
+                  })
+              }
+          );
+      
+          const result = await response.json();
+      
+          if (response.ok && result.success) {
+              showAlert(
+                  'success',
+                  'Thank you! Your message has been successfully sent to Abhay.'
+              );
+      
+              contactForm.reset();
+          } else {
+              showAlert(
+                  'error',
+                  result.message || 'Unable to send your message. Please try again.'
+              );
+          }
+      
       } catch (err) {
-        console.warn('API submission error:', err);
-        // Resilient message explaining backend connection
-        showAlert('error', 'Cannot connect to backend server right now. You can email Abhay directly at abhaygahlot100@gmail.com.');
+          console.error('FormSubmit Error:', err);
+      
+          showAlert(
+              'error',
+              'Unable to send your message right now. Please try again later or email abhaygahlot100@gmail.com.'
+          );
+      
       } finally {
-        setLoading(false);
+          setLoading(false);
       }
     });
 
